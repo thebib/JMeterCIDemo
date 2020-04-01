@@ -12,7 +12,8 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: '/apache-jmeter-5.1.1/bin/jmeter.bat -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "out"'
+    workingDirectory: $(Agent.BuildDirectory)
+    script: '/apache-jmeter-5.1.1/bin/jmeter -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "out"'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)\out'
