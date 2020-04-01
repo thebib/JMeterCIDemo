@@ -13,10 +13,10 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'ls -R'
-    workingDirectory: '$(Agent.BuildDirectory)'
+    workingDirectory: '$(Build.StagingDirectory)'
 - task: CmdLine@2
   inputs:
-    workingDirectory: $(Agent.BuildDirectory)
+    workingDirectory: $(Build.StagingDirectory)
     script: './apache-jmeter-5.1.1/bin/jmeter -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "out"'
 - task: PublishBuildArtifacts@1
   inputs:
