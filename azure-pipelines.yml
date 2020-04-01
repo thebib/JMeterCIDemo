@@ -12,7 +12,7 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'ls'
+    script: 'ls -R'
     workingDirectory: '$(Agent.BuildDirectory)'
 - task: CmdLine@2
   inputs:
