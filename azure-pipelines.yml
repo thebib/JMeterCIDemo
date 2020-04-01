@@ -13,13 +13,17 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'ls -R'
-    workingDirectory: '$(Build.StagingDirectory)'
+
 - task: CmdLine@2
   inputs:
-    workingDirectory: $(Build.StagingDirectory)
-    script: './apache-jmeter-5.1.1/bin/jmeter -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "out"'
+    script: 'ls -R'
+    workingDirectory: '$(Build.SourcesDirectory)'
+  
+- task: CmdLine@2
+  inputs:
+    workingDirectory: $(Build.SourcesDirectory)
+    script: './apache-jmeter-5.1.1/bin/jmeter -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "JMeterTest-$(BuildID)"'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)\out'
-    ArtifactName: 'JMeterTest-$(BuildID)'
+    PathtoPublish: '$(Build.SourcesDirectory)/JMeterTest-$(BuildID)'
     publishLocation: 'Container'
