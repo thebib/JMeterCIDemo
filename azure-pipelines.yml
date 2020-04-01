@@ -10,8 +10,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: Executing sample test in JMeter
-  displayName: 'Start Message'
 - task: CmdLine@2
   inputs:
     script: '.\apache-jmeter-5.1.1\bin\jmeter -n -t ''.\View Results Tree.jmx'' -l ''log.csv'' -e -o "out"'
