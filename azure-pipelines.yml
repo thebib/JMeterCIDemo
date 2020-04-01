@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: Executing sample test in JMeter
+  displayName: 'Start Message'
+- task: CmdLine@2
+  inputs:
+    script: '.\apache-jmeter-5.1.1\bin\jmeter -n -t ''.\View Results Tree.jmx'' -l ''log.csv'' -e -o "out"'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)\out'
+    ArtifactName: 'JMeterTest-$(BuildID)'
+    publishLocation: 'Container'
