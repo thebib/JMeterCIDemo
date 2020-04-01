@@ -1,0 +1,32 @@
+{
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 79,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 3.670886075949367,
+    "minResTime" : 0.0,
+    "maxResTime" : 250.0,
+    "pct1ResTime" : 1.0,
+    "pct2ResTime" : 2.0,
+    "pct3ResTime" : 250.0,
+    "throughput" : 2.647719274726011,
+    "receivedKBytesPerSec" : 0.0,
+    "sentKBytesPerSec" : 0.0
+  },
+  "JSR223 Sampler" : {
+    "transaction" : "JSR223 Sampler",
+    "sampleCount" : 79,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 3.670886075949367,
+    "minResTime" : 0.0,
+    "maxResTime" : 250.0,
+    "pct1ResTime" : 1.0,
+    "pct2ResTime" : 2.0,
+    "pct3ResTime" : 250.0,
+    "throughput" : 2.647719274726011,
+    "receivedKBytesPerSec" : 0.0,
+    "sentKBytesPerSec" : 0.0
+  }
+}
