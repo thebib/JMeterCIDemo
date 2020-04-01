@@ -22,7 +22,7 @@ steps:
 - task: CmdLine@2
   inputs:
     workingDirectory: $(Build.SourcesDirectory)
-    script: 'sudo ./apache-jmeter-5.1.1/bin/jmeter -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "JMeterTest-$(BuildID)"'
+    script: 'sudo ./apache-jmeter-5.1.1/bin/jmeter -n -t ''View Results Tree.jmx'' -l ''log.csv'' -e -o "JMeterTest"'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.SourcesDirectory)/JMeterTest-$(BuildID)'
