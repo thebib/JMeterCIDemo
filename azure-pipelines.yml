@@ -17,7 +17,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'ls -R'
-    workingDirectory: '$(Build.SourcesDirectory)'
+    workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
   
 - task: CmdLine@2
   inputs:
