@@ -15,6 +15,12 @@ steps:
   inputs:
     script: 'ls -R'
     workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
+
+
+- task: CmdLine@2
+  inputs:
+    workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
+    script: 'sh jmeter'
   
 - task: CmdLine@2
   inputs:
