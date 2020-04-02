@@ -27,6 +27,11 @@ steps:
     workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
     script: 'sh jmeter -n -t "View Results Tree.jmx" -l "$(Build.ArtifactStagingDirectory)/output/out.csv" -o "$(Build.ArtifactStagingDirectory)/report"'
 
+- task: CmdLine@2
+  inputs:
+    script: 'ls -R'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/report'
