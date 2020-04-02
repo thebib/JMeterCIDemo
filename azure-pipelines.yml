@@ -16,23 +16,13 @@ steps:
     script: 'ls -R'
     workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
 
-
-- task: CmdLine@2
-  inputs:
-    workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
-    script: 'sh jmeter'
-
 - task: CmdLine@2
   inputs:
     script: |
       DISPLAY=localhost:0
       export DISPLAY
-  
+
 - task: CmdLine@2
   inputs:
     workingDirectory: '$(Build.SourcesDirectory)/apache-jmeter-5.1.1/bin'
     script: 'sh jmeter -n -t "View Results Tree.jmx"'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/JMeterTest-$(BuildID)'
-    publishLocation: 'Container'
